@@ -1,6 +1,6 @@
 # ICU for iOS
 
-This is a static build of ICU suitable for using in iOS apps. The `icu` directory is taken from [here](http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_2-src.tgz).
+This is a static build of ICU for armv7 and armv7s suitable for using in iOS apps. The `icu` directory is taken from [here](http://download.icu-project.org/files/icu4c/50.1.2/icu4c-50_1_2-src.tgz).
 
 # Setting it up
 
