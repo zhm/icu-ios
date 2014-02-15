@@ -16,6 +16,11 @@ mkdir -p build-armv7s && cd build-armv7s && gnumake
 
 cd $ICU_ROOT
 
-echo "Combining i386, armv7, and armv7s libraries."
+./configure_arm64.sh
+mkdir -p build-arm64 && cd build-arm64 && gnumake
+
+cd $ICU_ROOT
+
+echo "Combining i386, armv7, armv7s, and arm64 libraries."
 
 ./make_universal.sh

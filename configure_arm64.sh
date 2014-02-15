@@ -1,6 +1,6 @@
 DEVELOPER=/Applications/Xcode.app/Contents/Developer
-SDKROOT="$(xcodebuild -version -sdk iphonesimulator | grep -E '^Path' | sed 's/Path: //')"
-ARCH="i386"
+SDKROOT="$(xcodebuild -version -sdk iphoneos | grep -E '^Path' | sed 's/Path: //')"
+ARCH="arm64"
 
 ICU_PATH="$(pwd)/icu"
 ICU_FLAGS="-I$ICU_PATH/source/common/ -I$ICU_PATH/source/tools/tzcode/ "
@@ -15,4 +15,4 @@ mkdir -p build-$ARCH && cd build-$ARCH
 
 [ -e Makefile ] && make distclean
 
-sh $ICU_PATH/source/configure --host=i686-apple-darwin11 --enable-static --disable-shared
+sh $ICU_PATH/source/configure --host=arm-apple-darwin --enable-static --disable-shared -with-cross-build=$ICU_PATH/../build-i386
