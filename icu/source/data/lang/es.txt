@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/es.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/es.xml
+ * ICU <specials> source: <path>/common/main/es.xml
  */
 es{
     Keys{
@@ -20,7 +20,7 @@ es{
         colNormalization{"Orden con normalización"}
         colNumeric{"Orden numérico"}
         colStrength{"Intensidad de orden"}
-        collation{"intercalación"}
+        collation{"orden"}
         currency{"moneda"}
         numbers{"números"}
         timezone{"Zona horaria"}
@@ -36,7 +36,7 @@ es{
         ada{"adangme"}
         ady{"adigeo"}
         ae{"avéstico"}
-        af{"afrikaans"}
+        af{"afrikáans"}
         afa{"lengua afroasiática"}
         afh{"afrihili"}
         agq{"aghem"}
@@ -52,6 +52,7 @@ es{
         anp{"angika"}
         apa{"lenguas apache"}
         ar{"árabe"}
+        ar_001{"árabe estándar moderno"}
         arc{"arameo"}
         arn{"araucano"}
         arp{"arapaho"}
@@ -179,7 +180,7 @@ es{
         enm{"inglés medieval"}
         eo{"esperanto"}
         es{"español"}
-        es_419{"español latinoamericano"}
+        es_419{"español de América"}
         es_ES{"español de España"}
         et{"estonio"}
         eu{"vasco"}
@@ -191,7 +192,7 @@ es{
         fi{"finés"}
         fil{"filipino"}
         fiu{"lengua finoúgria"}
-        fj{"fidjiano"}
+        fj{"fiyiano"}
         fo{"feroés"}
         fon{"fon"}
         fr{"francés"}
@@ -353,6 +354,7 @@ es{
         mg{"malgache"}
         mga{"irlandés medieval"}
         mgh{"makhuwa-meetto"}
+        mgo{"meta'"}
         mh{"marshalés"}
         mi{"maorí"}
         mic{"micmac"}
@@ -594,6 +596,7 @@ es{
         zap{"zapoteco"}
         zbl{"símbolos Bliss"}
         zen{"zenaga"}
+        zgh{"tamazight"}
         zh{"chino"}
         zh_Hans{"chino simplificado"}
         zh_Hant{"chino tradicional"}
@@ -644,8 +647,8 @@ es{
         Hang{"hangul"}
         Hani{"han"}
         Hano{"hanunoo"}
-        Hans{"han simplificado"}
-        Hant{"han tradicional"}
+        Hans{"simplificado"}
+        Hant{"tradicional"}
         Hebr{"hebreo"}
         Hira{"hiragana"}
         Hmng{"pahawh hmong"}
@@ -747,6 +750,42 @@ es{
             persian{"calendario persa"}
             roc{"calendario de la República de China"}
         }
+        colAlternate{
+            non-ignorable{"Ordenar símbolos"}
+            shifted{"Ordenar ignorando símbolos"}
+        }
+        colBackwards{
+            no{"Ordenar acentos normalmente"}
+            yes{"Ordenar acentos con inversión"}
+        }
+        colCaseFirst{
+            lower{"Ordenar empezando por minúsculas"}
+            no{"Ordenar siguiendo orden normal de mayúsculas y minúsculas"}
+            upper{"Ordenar empezando por mayúsculas"}
+        }
+        colCaseLevel{
+            no{"Ordenar sin distinguir entre mayúsculas y minúsculas"}
+            yes{"Ordenar distinguiendo entre mayúsculas y minúsculas"}
+        }
+        colHiraganaQuaternary{
+            no{"Ordenar caracteres kana por separado"}
+            yes{"Ordenar diferenciando caracteres kana"}
+        }
+        colNormalization{
+            no{"Ordenar sin normalización"}
+            yes{"Ordenar con normalización Unicode"}
+        }
+        colNumeric{
+            no{"Ordenar dígitos individualmente"}
+            yes{"Ordenar dígitos numéricamente"}
+        }
+        colStrength{
+            identical{"Ordenar todo"}
+            primary{"Ordenar solo letras base"}
+            quaternary{"Ordenar acentos/mayúsculas y minúsculas/ancho/kana"}
+            secondary{"Ordenar acentos"}
+            tertiary{"Ordenar acentos/mayúsculas y minúsculas/ancho"}
+        }
         collation{
             big5han{"orden del chino tradicional - Big5"}
             dictionary{"orden de diccionario"}
@@ -758,6 +797,7 @@ es{
             reformed{"orden reformado"}
             search{"búsqueda de uso general"}
             searchjl{"Buscar por consonante inicial de hangul"}
+            standard{"orden estándar"}
             stroke{"orden de los trazos"}
             traditional{"orden tradicional"}
             unihan{"orden por radical-trazos"}
@@ -819,7 +859,7 @@ es{
         VALENCIA{"Valenciano"}
         WADEGILE{"Romanización Wade-Giles"}
     }
-    Version{"2.0.78.32"}
+    Version{"2.0.92.87"}
     codePatterns{
         language{"Idioma: {0}"}
         script{"Dialecto: {0}"}
@@ -828,6 +868,6 @@ es{
     localeDisplayPattern{
         keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{","}
+        separator{"{0}, {1}"}
     }
 }

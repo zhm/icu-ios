@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/ar.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/ar.xml
+ * ICU <specials> source: <path>/common/main/ar.xml
  */
 ar{
     Keys{
@@ -52,6 +52,7 @@ ar{
         anp{"الأنجيكا"}
         apa{"اللغات الأباتشية"}
         ar{"العربية"}
+        ar_001{"العربية الرسمية الحديثة"}
         arc{"الآرامية"}
         arn{"الأروكانية"}
         arp{"الأراباهو"}
@@ -296,7 +297,7 @@ ar{
         kut{"الكتيناي"}
         kv{"الكومي"}
         kw{"الكورنية"}
-        ky{"القيرغستانية"}
+        ky{"القرغيزية"}
         la{"اللاتينية"}
         lad{"الإسباعبرية"}
         lah{"اللاهندا"}
@@ -546,6 +547,7 @@ ar{
         zap{"الزابوتيك"}
         zbl{"رموز المعايير الأساسية"}
         zen{"الزيناجا"}
+        zgh{"التمازيغية المغربية القياسية"}
         zh{"الصينية"}
         zh_Hans{"الصينية المبسطة"}
         zh_Hant{"الصينية التقليدية"}
@@ -557,6 +559,8 @@ ar{
     }
     LanguagesShort{
         az{"الأذرية"}
+        en_GB{"الإنجليزية المملكة المتحدة"}
+        en_US{"الإنجليزية الولايات المتحدة"}
     }
     Scripts{
         Arab{"العربية"}
@@ -691,21 +695,61 @@ ar{
             indian{"التقويم القومي الهندي"}
             islamic{"التقويم الهجري"}
             islamic-civil{"التقويم الإسلامي المدني"}
+            islamic-rgsa{"التقويم الإسلامي (مستخدم بالسعودية)"}
+            islamic-tbla{"التقويم الإسلامي (مجدول، العصر الفلكي)"}
+            islamic-umalqura{"التقويم الإسلامي (أم القرى)"}
             japanese{"التقويم الياباني"}
             persian{"التقويم الفارسي"}
             roc{"تقويم مينجو"}
         }
+        colAlternate{
+            non-ignorable{"تصنيف الرموز"}
+            shifted{"تصنيف تجاهل الرموز"}
+        }
+        colBackwards{
+            no{"تصنيف اللكنات بشكل عادي"}
+            yes{"تصنيف اللكنات معكوسة"}
+        }
+        colCaseFirst{
+            lower{"تصنيف الأحرف الصغيرة أولاً"}
+            no{"ترتيب تصنيف حالة الأحرف الطبيعية"}
+            upper{"تصنيف الأحرف الكبيرة أولاً"}
+        }
+        colCaseLevel{
+            no{"تصنيف بحسب الأحرف غير الحساسة لحالة الأحرف"}
+            yes{"تصنيف بحسب حساسية الأحرف"}
+        }
+        colHiraganaQuaternary{
+            no{"تصنيف الكانا بشكل منفصل"}
+            yes{"تصنيف الكانا بشكل مختلف"}
+        }
+        colNormalization{
+            no{"التصفية بدون تسوية"}
+            yes{"تصنيف Unicode طبيعي"}
+        }
+        colNumeric{
+            no{"تصنيف الأرقام على حدة"}
+            yes{"تصنيف الأرقام بالعدد"}
+        }
+        colStrength{
+            identical{"تصنيف الكل"}
+            primary{"تصنيف الحروف الأساسية فقط"}
+            quaternary{"تصنيف اللكنات/الحالة/العرض/الكانا"}
+            secondary{"تصنيف اللكنات"}
+            tertiary{"تصنيف اللكنات/الحالة/العرض"}
+        }
         collation{
-            big5han{"ترتيب فرز الصينية التقليدية [Big5]"}
+            big5han{"ترتيب فرز الصينية التقليدية (Big5)"}
             dictionary{"ترتيب فرز القاموس"}
-            ducet{"ترتيب تصنيف Unicode الافتراضي"}
-            gb2312han{"ترتيب فرز الصينية المبسطة [GB2312]"}
+            ducet{"ترتيب فرز Unicode الافتراضي"}
+            gb2312han{"ترتيب فرز الصينية المبسطة (GB2312)"}
             phonebook{"ترتيب فرز دليل الهاتف"}
             phonetic{"ترتيب الفرز الصوتي"}
             pinyin{"الترتيب الصيني بنيين المبسط"}
             reformed{"ترتيب فرز محسَّن"}
             search{"بحث لأغراض عامة"}
             searchjl{"بحث باستخدام حرف الهانغول الساكن الأول"}
+            standard{"ترتيب الفرز القياسي"}
             stroke{"الترتيب الصيني بنيين التقليدي"}
             traditional{"ترتيب تقليدي"}
             unihan{"ترتيب تصنيف الجذر والضغطات"}
@@ -773,7 +817,7 @@ ar{
         VALENCIA{"بلنسية"}
         WADEGILE{"المندرين باللاتينية - ويد–جيلز"}
     }
-    Version{"2.0.78.39"}
+    Version{"2.0.92.87"}
     codePatterns{
         language{"اللغة: {0}"}
         script{"نظام الكتابة: {0}"}
@@ -782,6 +826,6 @@ ar{
     localeDisplayPattern{
         keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{"، "}
+        separator{"{0}، {1}"}
     }
 }

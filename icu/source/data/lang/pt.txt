@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/pt.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/pt.xml
+ * ICU <specials> source: <path>/common/main/pt.xml
  */
 pt{
     Keys{
@@ -51,6 +51,7 @@ pt{
         anp{"angika"}
         apa{"idioma apache"}
         ar{"árabe"}
+        ar_001{"árabe moderno"}
         arc{"aramaico"}
         arn{"araucano"}
         arp{"arapaho"}
@@ -166,6 +167,7 @@ pt{
         es{"espanhol"}
         es_419{"espanhol latino-americano"}
         es_ES{"espanhol europeu"}
+        es_MX{"espanhol mexicano"}
         et{"estoniano"}
         eu{"basco"}
         ewo{"ewondo"}
@@ -246,6 +248,7 @@ pt{
         iu{"inuktitut"}
         ja{"japonês"}
         jbo{"lojban"}
+        jgo{"nguemba"}
         jpr{"judaico-persa"}
         jrb{"judaico-arábico"}
         jv{"javanês"}
@@ -321,6 +324,7 @@ pt{
         mfe{"Morisyen"}
         mg{"malgaxe"}
         mga{"irlandês médio"}
+        mgo{"meta'"}
         mh{"marshalês"}
         mi{"maori"}
         mic{"miquemaque"}
@@ -468,7 +472,7 @@ pt{
         sus{"sosso"}
         sux{"sumério"}
         sv{"sueco"}
-        sw{"suaili"}
+        sw{"suaíli"}
         swb{"comoriano"}
         syc{"siríaco clássico"}
         syr{"siríaco"}
@@ -505,11 +509,11 @@ pt{
         ty{"taitiano"}
         tyv{"tuvinian"}
         udm{"udmurt"}
-        ug{"uighur"}
+        ug{"uigur"}
         uga{"ugarítico"}
         uk{"ucraniano"}
         umb{"umbundu"}
-        und{"idioma inválido ou desconhecido"}
+        und{"idioma desconhecido"}
         ur{"urdu"}
         uz{"usbeque"}
         vai{"vai"}
@@ -537,6 +541,7 @@ pt{
         zap{"zapoteca"}
         zbl{"símbolos blis"}
         zen{"zenaga"}
+        zgh{"tamazight marroquino padrão"}
         zh{"chinês"}
         zh_Hans{"chinês simplificado"}
         zh_Hant{"chinês tradicional"}
@@ -548,6 +553,8 @@ pt{
     }
     LanguagesShort{
         az{"azeri"}
+        en_GB{"inglês do Reino Unido"}
+        en_US{"inglês dos Estados Unidos"}
     }
     Scripts{
         Arab{"árabe"}
@@ -555,6 +562,7 @@ pt{
         Armn{"armênio"}
         Avst{"avéstico"}
         Bali{"balinês"}
+        Bamu{"bamum"}
         Batk{"bataque"}
         Beng{"bengali"}
         Blis{"símbolos bliss"}
@@ -589,8 +597,8 @@ pt{
         Hang{"hangul"}
         Hani{"han"}
         Hano{"hanunoo"}
-        Hans{"han simplificado"}
-        Hant{"han tradicional"}
+        Hans{"simplificado"}
+        Hant{"tradicional"}
         Hebr{"hebraico"}
         Hira{"hiragana"}
         Hmng{"pahawh hmong"}
@@ -616,11 +624,13 @@ pt{
         Limb{"limbu"}
         Lina{"A linear"}
         Linb{"B linear"}
+        Lisu{"lisu"}
         Lyci{"lício"}
         Lydi{"lídio"}
         Mand{"mandaico"}
         Mani{"maniqueano"}
         Maya{"hieróglifos maias"}
+        Merc{"meroítico cursivo"}
         Mero{"meroítico"}
         Mlym{"malaiala"}
         Mong{"mongol"}
@@ -682,8 +692,8 @@ pt{
         Zzzz{"escrita desconhecida"}
     }
     Scripts%stand-alone{
-        Hans{"Hän simplificado"}
-        Hant{"Hän tradicional"}
+        Hans{"han simplificado"}
+        Hant{"han tradicional"}
     }
     Types{
         calendar{
@@ -701,6 +711,42 @@ pt{
             persian{"Calendário persa"}
             roc{"Calendário da República da China"}
         }
+        colAlternate{
+            non-ignorable{"Classificar símbolos"}
+            shifted{"Classificar ignorando símbolos"}
+        }
+        colBackwards{
+            no{"Classificar acentos normalmente"}
+            yes{"Classificação reversa de acentos"}
+        }
+        colCaseFirst{
+            lower{"Classificar por minúsculas"}
+            no{"Classificação normal de maiúsculas e minúsculas"}
+            upper{"Classificar por maiúsculas"}
+        }
+        colCaseLevel{
+            no{"Classificação sem diferenciação de maiúsculas e minúsculas"}
+            yes{"Classificação com diferenciação de maiúsculas e minúsculas"}
+        }
+        colHiraganaQuaternary{
+            no{"Classificar kana separadamente"}
+            yes{"Classificar kana diferentemente"}
+        }
+        colNormalization{
+            no{"Classificar sem normalização"}
+            yes{"Classificar Unicode normalizado"}
+        }
+        colNumeric{
+            no{"Classificar dígitos individualmente"}
+            yes{"Classificar dígitos numericamente"}
+        }
+        colStrength{
+            identical{"Classificar tudo"}
+            primary{"Classificar somente letras básicas"}
+            quaternary{"Classificar acentos/maiúsculas e minúsculas/largura/kana"}
+            secondary{"Classificar acentos"}
+            tertiary{"Classificar acentos/maiúsculas e minúsculas/largura"}
+        }
         collation{
             big5han{"Ordem do Chinês Tradicional - Big5"}
             dictionary{"Ordem do dicionário"}
@@ -712,6 +758,7 @@ pt{
             reformed{"Ordem reformulada"}
             search{"Pesquisa de uso geral"}
             searchjl{"Pesquisar por consonante inicial hangul"}
+            standard{"padrão"}
             stroke{"Ordem dos Traços"}
             traditional{"Ordem Tradicional"}
             unihan{"Ordem por Radical-Traços"}
@@ -799,15 +846,15 @@ pt{
         VALENCIA{"valenciano"}
         WADEGILE{"romanização Wade-Giles"}
     }
-    Version{"2.0.78.30"}
+    Version{"2.0.92.87"}
     codePatterns{
         language{"Idioma: {0}"}
-        script{"Roteiro: {0}"}
+        script{"Alfabeto: {0}"}
         territory{"Região: {0}"}
     }
     localeDisplayPattern{
         keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{", "}
+        separator{"{0}, {1}"}
     }
 }

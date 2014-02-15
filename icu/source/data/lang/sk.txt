@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/sk.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/sk.xml
+ * ICU <specials> source: <path>/common/main/sk.xml
  */
 sk{
     Keys{
@@ -52,6 +52,7 @@ sk{
         anp{"angika"}
         apa{"apačské jazyky"}
         ar{"arabčina"}
+        ar_001{"moderná štandardná arabčina"}
         arc{"aramejčina"}
         arn{"araukánčina"}
         arp{"arapaho"}
@@ -181,6 +182,7 @@ sk{
         es{"španielčina"}
         es_419{"latinskoamerická španielčina"}
         es_ES{"iberská španielčina"}
+        es_MX{"mexická španielčina"}
         et{"estónčina"}
         eu{"baskičtina"}
         ewo{"ewondo"}
@@ -263,6 +265,7 @@ sk{
         iu{"inuktitut"}
         ja{"japončina"}
         jbo{"lojban"}
+        jgo{"ngomba"}
         jmc{"machame"}
         jpr{"židovská perzština"}
         jrb{"židovská arabčina"}
@@ -353,6 +356,7 @@ sk{
         mg{"malgaština"}
         mga{"stredná írčina"}
         mgh{"makhuwa-meetto"}
+        mgo{"meta’"}
         mh{"kajin-majol"}
         mi{"maorijčina"}
         mic{"mikmakčina"}
@@ -594,6 +598,7 @@ sk{
         zap{"zapotéčtina"}
         zbl{"systém Bliss"}
         zen{"zenaga"}
+        zgh{"štandardný marocký tamazight"}
         zh{"čínština"}
         zh_Hans{"zjednodušená čínština"}
         zh_Hant{"tradičná čínština"}
@@ -605,56 +610,58 @@ sk{
     }
     LanguagesShort{
         az{"azerčina"}
+        en_GB{"angličtina (UK)"}
+        en_US{"angličtina (USA)"}
     }
     Scripts{
         Arab{"arabské"}
-        Armn{"Arménsky"}
+        Armn{"arménske"}
         Bali{"balijský"}
-        Beng{"bengálsky"}
-        Bopo{"Bopomofo"}
-        Brai{"Braillovo písmo"}
-        Cyrl{"Cyrilika"}
-        Deva{"Dévanágarí"}
+        Beng{"bengálske"}
+        Bopo{"bopomofo"}
+        Brai{"braillovo písmo"}
+        Cyrl{"cyrilika"}
+        Deva{"dévanágarí"}
         Egyp{"egyptské hieroglyfy"}
-        Ethi{"etiópsky"}
-        Geor{"Gruzínčina"}
+        Ethi{"etiópske"}
+        Geor{"gruzínske"}
         Glag{"hlaholika"}
         Goth{"gotický"}
-        Grek{"Grécky"}
-        Gujr{"Gudžarátčina"}
-        Guru{"Gurmukhi"}
-        Hang{"Hangul"}
-        Hani{"Han"}
+        Grek{"grécke"}
+        Gujr{"gudžarátí"}
+        Guru{"gurmukhi"}
+        Hang{"hangul"}
+        Hani{"han"}
         Hans{"Zjednodušené čínske"}
-        Hant{"Tradičné čínske"}
-        Hebr{"hebrejský"}
-        Hira{"Hiragana"}
+        Hant{"tradičné"}
+        Hebr{"hebrejské"}
+        Hira{"hiragana"}
         Jpan{"japonské"}
-        Kana{"Katakana"}
-        Khmr{"kmérsky"}
-        Knda{"Kannadčina"}
+        Kana{"katakana"}
+        Khmr{"khmérske"}
+        Knda{"kannadské"}
         Kore{"kórejské"}
-        Laoo{"Lao"}
+        Laoo{"laoské"}
         Latn{"latinka"}
         Lina{"lineárna A"}
         Linb{"lineárna B"}
         Maya{"mayské hieroglyfy"}
-        Mlym{"Malajámčina"}
-        Mong{"mongolský"}
-        Mymr{"Mjanmarsko"}
-        Orya{"Oríjčina"}
+        Mlym{"malajálamske"}
+        Mong{"mongolské"}
+        Mymr{"mjanmarské"}
+        Orya{"uríjske"}
         Osma{"osmanský"}
         Runr{"Runové písmo"}
-        Sinh{"Sinhálske písmo"}
-        Taml{"Tamilčina"}
-        Telu{"Telugčina"}
-        Thaa{"Tána"}
-        Thai{"Thajčina"}
-        Tibt{"tibetský"}
-        Zsym{"Symboly"}
-        Zxxx{"Nepísané"}
-        Zyyy{"Obecný"}
-        Zzzz{"Neznáme písmo"}
+        Sinh{"sinhálske"}
+        Taml{"tamilské"}
+        Telu{"telugské"}
+        Thaa{"tána"}
+        Thai{"thajské"}
+        Tibt{"tibetské"}
+        Zsym{"symboly"}
+        Zxxx{"bez zápisu"}
+        Zyyy{"všeobecné"}
+        Zzzz{"neznáme písmo"}
     }
     Scripts%stand-alone{
         Hans{"han – zjednodušené"}
@@ -676,6 +683,42 @@ sk{
             persian{"Perzský kalendár"}
             roc{"Kalendár Čínskej republiky"}
         }
+        colAlternate{
+            non-ignorable{"Radiť symboly"}
+            shifted{"Pri radení ignorovať symboly"}
+        }
+        colBackwards{
+            no{"Normálne radenie akcentov"}
+            yes{"Radiť akcenty opačne"}
+        }
+        colCaseFirst{
+            lower{"Najprv radiť malé písmená"}
+            no{"Normálne radenie veľkých a malých písmen"}
+            upper{"Najprv radiť veľké písmená"}
+        }
+        colCaseLevel{
+            no{"Pri radení nerozlišovať veľké a malé písmená"}
+            yes{"Pri radení rozlišovať veľké a malé písmená"}
+        }
+        colHiraganaQuaternary{
+            no{"Radiť slabičné písma (kana) samostatne"}
+            yes{"Radiť slabičné písma (kana) inak"}
+        }
+        colNormalization{
+            no{"Radiť bez normalizácie"}
+            yes{"Radenie podľa normalizovaného kódovania Unicode"}
+        }
+        colNumeric{
+            no{"Radiť číslice jednotlivo"}
+            yes{"Numerické radenie číslic"}
+        }
+        colStrength{
+            identical{"Radiť všetko"}
+            primary{"Radiť iba základné písmená"}
+            quaternary{"Radiť akcenty/veľké a malé písmená/šírku/kana"}
+            secondary{"Radiť akcenty"}
+            tertiary{"Radiť akcenty/veľké a malé písmená/šírku"}
+        }
         collation{
             big5han{"Tradičný čínsky Big5"}
             dictionary{"Usporiadanie slovníka"}
@@ -687,6 +730,7 @@ sk{
             reformed{"Reformované usporiadanie"}
             search{"Všeobecné vyhľadávanie"}
             searchjl{"Hľadať podľa počiatočnej spoluhlásky písma Hangul"}
+            standard{"Štandardné poradie"}
             stroke{"Tiedenie podľa ťahov"}
             traditional{"Tradičné"}
             unihan{"Usporiadanie podľa znakov radikál"}
@@ -737,7 +781,7 @@ sk{
     Variants{
         SCOTLAND{"škótska štandardná angličtina"}
     }
-    Version{"2.0.78.38"}
+    Version{"2.0.92.87"}
     codePatterns{
         language{"Jazyk: {0}"}
         script{"Písmo: {0}"}
@@ -746,6 +790,6 @@ sk{
     localeDisplayPattern{
         keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{","}
+        separator{"{0}, {1}"}
     }
 }

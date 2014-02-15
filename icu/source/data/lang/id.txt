@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/id.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/id.xml
+ * ICU <specials> source: <path>/common/main/id.xml
  */
 id{
     Keys{
@@ -35,7 +35,7 @@ id{
         ach{"Acoli"}
         ada{"Adangme"}
         ady{"Adygei"}
-        ae{"Avestan"}
+        ae{"Avesta"}
         af{"Afrikaans"}
         afa{"Rumpun Bahasa Afro-Asia"}
         afh{"Afrihili"}
@@ -48,10 +48,11 @@ id{
         alt{"Altai Selatan"}
         am{"Amharik"}
         an{"Aragon"}
-        ang{"Inggris Kuno [kl.450-1100]"}
+        ang{"Inggris Kuno"}
         anp{"Angika"}
         apa{"Rumpun Bahasa Apache"}
         ar{"Arab"}
+        ar_001{"Arab Standar Modern"}
         arc{"Aram"}
         arn{"Araukan"}
         arp{"Arapaho"}
@@ -83,7 +84,7 @@ id{
         bfd{"Bafut"}
         bg{"Bulgar"}
         bh{"Bihari"}
-        bho{"Bhojpur"}
+        bho{"Bhojpuri"}
         bi{"Bislama"}
         bik{"Bikol"}
         bin{"Bini"}
@@ -175,13 +176,14 @@ id{
         en_AU{"Inggris Australia"}
         en_CA{"Inggris Kanada"}
         en_GB{"Inggris Inggris"}
-        en_US{"Inggris A.S."}
-        enm{"Inggris Abad Pertengahan [1100-1500]"}
+        en_US{"Inggris Amerika"}
+        enm{"Inggris Abad Pertengahan"}
         eo{"Esperanto"}
         es{"Spanyol"}
         es_419{"Spanyol Amerika Latin"}
         es_ES{"Spanyol Eropa"}
-        et{"Estonia"}
+        es_MX{"Spanyol Meksiko"}
+        et{"Esti"}
         eu{"Bask"}
         ewo{"Ewondo"}
         fa{"Persia"}
@@ -197,8 +199,8 @@ id{
         fr{"Prancis"}
         fr_CA{"Prancis Kanada"}
         fr_CH{"Prancis Swiss"}
-        frm{"Prancis Abad Pertengahan [kl.1400-1600]"}
-        fro{"Prancis Kuno [842-kl.1400]"}
+        frm{"Prancis Abad Pertengahan"}
+        fro{"Prancis Kuno"}
         frr{"Frisia Utara"}
         frs{"Frisia Timur"}
         fur{"Friuli"}
@@ -212,14 +214,14 @@ id{
         gez{"Geez"}
         gil{"Gilbert"}
         gl{"Galisia"}
-        gmh{"Jerman Abad Pertengahan [kl.1050-1500]"}
+        gmh{"Jerman Abad Pertengahan"}
         gn{"Guarani"}
-        goh{"Jerman Kuno [kl.750-1050]"}
+        goh{"Jerman Kuno"}
         gon{"Gondi"}
         gor{"Gorontalo"}
         got{"Gothik"}
         grb{"Grebo"}
-        grc{"Yunani Kuno [s/d 1453]"}
+        grc{"Yunani Kuno"}
         gsw{"Jerman Swiss"}
         gu{"Gujarati"}
         guz{"Gusii"}
@@ -333,7 +335,7 @@ id{
         lui{"Luiseno"}
         lun{"Lunda"}
         luo{"Luo"}
-        lus{"Lushai"}
+        lus{"Mizo"}
         luy{"Luyia"}
         lv{"Latvi"}
         mad{"Madura"}
@@ -349,8 +351,9 @@ id{
         mdr{"Mandar"}
         men{"Mende"}
         mer{"Meru"}
+        mfe{"Morisien"}
         mg{"Malagasi"}
-        mga{"Irlandia Abad Pertengahan [900-1200]"}
+        mga{"Irlandia Abad Pertengahan"}
         mgh{"Makhuwa-Meetto"}
         mh{"Marshall"}
         mi{"Maori"}
@@ -429,7 +432,7 @@ id{
         pam{"Pampanga"}
         pap{"Papiamento"}
         pau{"Palau"}
-        peo{"Persia Kuno [kl.600-400 SM.]"}
+        peo{"Persia Kuno"}
         phi{"Rumpun Bahasa Filipina"}
         phn{"Funisia"}
         pi{"Pali"}
@@ -456,7 +459,7 @@ id{
         rup{"Makedo-Rumania"}
         rw{"Kinyarwanda"}
         rwk{"Rwa"}
-        sa{"Sansekerta"}
+        sa{"Sanskerta"}
         sad{"Sandawe"}
         sah{"Sakha"}
         sai{"Rumpun Bahasa Indian Amerika Selatan"}
@@ -557,7 +560,7 @@ id{
         tyv{"Tuvinia"}
         tzm{"Tamazight Maroko Tengah"}
         udm{"Udmurt"}
-        ug{"Uighur"}
+        ug{"Uyghur"}
         uga{"Ugarit"}
         uk{"Ukraina"}
         umb{"Umbundu"}
@@ -593,6 +596,7 @@ id{
         zap{"Zapotek"}
         zbl{"Blissymbol"}
         zen{"Zenaga"}
+        zgh{"Tamazight Maroko Standar"}
         zh{"China"}
         zh_Hans{"China (Aksara Sederhana)"}
         zh_Hant{"China (Aksara Tradisional)"}
@@ -604,6 +608,8 @@ id{
     }
     LanguagesShort{
         az{"Azeri"}
+        en_GB{"Inggris U.K."}
+        en_US{"Inggris A.S."}
     }
     Scripts{
         Afak{"Afaka"}
@@ -785,17 +791,55 @@ id{
             persian{"Kalender Persia"}
             roc{"Kalendar Minguo"}
         }
+        colAlternate{
+            non-ignorable{"Sortir Simbol"}
+            shifted{"Sortir Abaikan Simbol"}
+        }
+        colBackwards{
+            no{"Sortir Aksen Secara Normal"}
+            yes{"Sortir Aksen Terbalik"}
+        }
+        colCaseFirst{
+            lower{"Sortir Huruf Kecil Dahulu"}
+            no{"Sortir Urutan Ukuran Huruf Normal"}
+            upper{"Sortir Huruf Besar Dahulu"}
+        }
+        colCaseLevel{
+            no{"Sortir Tidak Peka Huruf Besar"}
+            yes{"Sortir Peka Huruf Besar"}
+        }
+        colHiraganaQuaternary{
+            no{"Sortir Kana Secara Terpisah"}
+            yes{"Sortir Kana Secara Berbeda"}
+        }
+        colNormalization{
+            no{"Sortir Tanpa Normalisasi"}
+            yes{"Sortir Unicode Dinormalisasi"}
+        }
+        colNumeric{
+            no{"Sortir Digit Satu Per Satu"}
+            yes{"Sortir Digit Secara Numerik"}
+        }
+        colStrength{
+            identical{"Sortir Semua"}
+            primary{"Sortir Huruf Dasar Saja"}
+            quaternary{"Sortir Aksen/Ukuran Huruf/Lebar/Kana"}
+            secondary{"Sortir Aksen"}
+            tertiary{"Sortir Aksen/Ukuran Huruf/Lebar"}
+        }
         collation{
             big5han{"Urutan Sortir China Tradisional - Big5"}
             dictionary{"Urutan Sortir Kamus"}
-            direct{"Langsung"}
-            ducet{"Urutan Sortir Unicode Bawaan"}
+            ducet{"Urutan Sortir Unicode Default"}
+            eor{"Aturan Pengurutan Eropa"}
             gb2312han{"Urutan Sortir China Aks. Sederhana - GB2312"}
             phonebook{"Urutan Sortir Buku Telepon"}
             phonetic{"Urutan Sortir Fonetik"}
             pinyin{"Urutan Sortir Pinyin"}
             reformed{"Urutan Sortir yang Diubah Bentuknya"}
             search{"Pencarian Tujuan Umum"}
+            searchjl{"Pencarian Menurut Konsonan Awal Hangul"}
+            standard{"Urutan Sortir Standar"}
             stroke{"Urutan Sortir Guratan"}
             traditional{"Urutan Sortir Tradisional"}
             unihan{"Urutan Sortir Guratan Radikal"}
@@ -855,6 +899,7 @@ id{
             thai{"Angka Thai"}
             tibt{"Angka Tibet"}
             traditional{"Angka Tradisional"}
+            vaii{"Angka Vai"}
         }
     }
     Variants{
@@ -899,7 +944,7 @@ id{
         VALENCIA{"Valencia"}
         WADEGILE{"Wade-Giles Latin"}
     }
-    Version{"2.0.78.30"}
+    Version{"2.0.93.8"}
     codePatterns{
         language{"Bahasa: {0}"}
         script{"Skrip: {0}"}
@@ -908,6 +953,6 @@ id{
     localeDisplayPattern{
         keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{","}
+        separator{"{0}, {1}"}
     }
 }

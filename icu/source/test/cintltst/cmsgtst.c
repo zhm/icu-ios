@@ -1,6 +1,6 @@
 /********************************************************************
  * COPYRIGHT: 
- * Copyright (c) 1997-2012, International Business Machines Corporation and
+ * Copyright (c) 1997-2013, International Business Machines Corporation and
  * others. All Rights Reserved.
  ********************************************************************
  *
@@ -89,6 +89,9 @@ static void FreeStrings( void )
     strings_initialized = FALSE;
 }
 
+#if (U_PLATFORM == U_PF_LINUX) /* add platforms here .. */
+/* Keep the #if above in sync with the one below that has the same "add platforms here .." comment. */
+#else
 /* Platform dependent test to detect if this type will return NULL when interpreted as a pointer. */
 static UBool returnsNullForType(int firstParam, ...) {
     UBool isNULL;
@@ -98,6 +101,7 @@ static UBool returnsNullForType(int firstParam, ...) {
     va_end(marker);
     return isNULL;
 }
+#endif
 
 /* Test u_formatMessage() with various test patterns() */
 static void MessageFormatTest( void ) 
@@ -997,6 +1001,7 @@ static void TestJ904(void) {
                              result, 256, &status,
                              string, 1/7.0,
                              789.0+1000*(56+60*(34+60*12)));
+    (void)length;   /* Suppress set but not used warning. */
 
     u_austrncpy(cresult, result, sizeof(cresult));
 

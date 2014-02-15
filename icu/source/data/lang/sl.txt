@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/sl.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/sl.xml
+ * ICU <specials> source: <path>/common/main/sl.xml
  */
 sl{
     Keys{
@@ -51,6 +51,7 @@ sl{
         anp{"angikaščina"}
         apa{"apaški jezik"}
         ar{"arabščina"}
+        ar_001{"sodobna standardna arabščina"}
         arc{"aramejščina"}
         arn{"aravkanščina"}
         arp{"arapaščina"}
@@ -514,6 +515,7 @@ sl{
         zap{"zapoteščina"}
         zbl{"znakovni jezik Bliss"}
         zen{"zenaščina"}
+        zgh{"standardni maroški tamazig"}
         zh{"kitajščina"}
         zh_Hans{"poenostavljena kitajščina"}
         zh_Hant{"tradicionalna kitajščina"}
@@ -525,6 +527,7 @@ sl{
     }
     LanguagesShort{
         az{"azerščina"}
+        en_US{"angleščina (ZDA)"}
     }
     Scripts{
         Arab{"arabski"}
@@ -668,6 +671,42 @@ sl{
             persian{"Perzijski koledar"}
             roc{"kitajski državni koledar"}
         }
+        colAlternate{
+            non-ignorable{"Razvrščanje simbolov"}
+            shifted{"Razvrščanje s prezrtjem simbolov"}
+        }
+        colBackwards{
+            no{"Navadno razvrščanje naglasov"}
+            yes{"Obratno razvrščanje naglasov"}
+        }
+        colCaseFirst{
+            lower{"Razvrščanje malih črk najprej"}
+            no{"Razvrščanje v običajnem zaporedju velikih/malih črk"}
+            upper{"Razvrščanje velikih črk najprej"}
+        }
+        colCaseLevel{
+            no{"Razvrščanje ne glede na velike/male črke"}
+            yes{"Razvrščanje ob upoštevanju velikih/malih črk"}
+        }
+        colHiraganaQuaternary{
+            no{"Razvrščanje kana ločeno"}
+            yes{"Razvrščanje kana različno"}
+        }
+        colNormalization{
+            no{"Razvrščanje brez normaliziranja"}
+            yes{"Normalizirano razvrščanje Unicode"}
+        }
+        colNumeric{
+            no{"Ločeno razvrščanje številk"}
+            yes{"Številsko razvrščanje števk"}
+        }
+        colStrength{
+            identical{"Razvrščanje vsega"}
+            primary{"Razvrščanje samo osnovnih črk"}
+            quaternary{"Razvrščanje po naglasih/velikih črkah/malih črkah/širini/kana"}
+            secondary{"Razvrščanje naglasov"}
+            tertiary{"Razvrščanje po naglasih/velikih črkah/malih črkah/širini"}
+        }
         collation{
             big5han{"razvrščanje po sistemu tradicionalne kitajščine - Big5"}
             dictionary{"Vrstni red razvrščanja v slovarju"}
@@ -679,6 +718,7 @@ sl{
             reformed{"Reformirano razvrščanje"}
             search{"Splošno iskanje"}
             searchjl{"Iskanje po začetnem soglasniku hangul"}
+            standard{"Standardno razvrščanje"}
             stroke{"razvrščanje po zaporedju pisanja pismenk"}
             traditional{"razvrščanje po tradicionalnem sistemu"}
             unihan{"Razvrščanje koren-poteza"}
@@ -718,6 +758,7 @@ sl{
             roman{"Rimske številke"}
             romanlow{"Rimske male številke"}
             taml{"Tamilske številke"}
+            tamldec{"Tamilske števke"}
             telu{"Teluške števke"}
             thai{"Tajske števke"}
             tibt{"Tibetanske števke"}
@@ -755,14 +796,15 @@ sl{
         VALENCIA{"valencijski pravopis"}
         WADEGILE{"romanizacija Wade-Giles"}
     }
-    Version{"2.0.78.38"}
+    Version{"2.0.92.87"}
     codePatterns{
         language{"Jezik: {0}"}
         script{"{0}"}
         territory{"Regija: {0}"}
     }
     localeDisplayPattern{
+        keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{", "}
+        separator{"{0}, {1}"}
     }
 }

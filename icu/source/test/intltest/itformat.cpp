@@ -1,6 +1,6 @@
 /********************************************************************
  * COPYRIGHT:
- * Copyright (c) 1997-2012, International Business Machines
+ * Copyright (c) 1997-2013, International Business Machines
  * Corporation and others. All Rights Reserved.
  ********************************************************************/
 
@@ -57,7 +57,9 @@
 #include "locnmtst.h"       // LocaleDisplayNamesTest
 #include "dcfmtest.h"       // DecimalFormatTest
 #include "listformattertest.h"  // ListFormatterTest
+#include "regiontst.h"      // RegionTest
 
+extern IntlTest *createCompactDecimalFormatTest();
 extern IntlTest *createGenderInfoTest();
 
 #define TESTCLASS(id, TestClass)          \
@@ -145,6 +147,16 @@ void IntlTestFormat::runIndexedTest( int32_t index, UBool exec, const char* &nam
             callTest(*test, par);
           }
           break;
+        case 44:
+          name = "CompactDecimalFormatTest";
+          if (exec) {
+            logln("CompactDecimalFormatTest test---");
+            logln((UnicodeString)"");
+            LocalPointer<IntlTest> test(createCompactDecimalFormatTest());
+            callTest(*test, par);
+          }
+          break;
+        TESTCLASS(45,RegionTest);
         default: name = ""; break; //needed to end loop
     }
     if (exec) {

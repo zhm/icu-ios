@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/et.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/et.xml
+ * ICU <specials> source: <path>/common/main/et.xml
  */
 et{
     Keys{
@@ -52,6 +52,7 @@ et{
         anp{"angika"}
         apa{"apatši keel"}
         ar{"araabia"}
+        ar_001{"araabia (tänapäevane)"}
         arc{"aramea"}
         arn{"araukaani"}
         arp{"arapaho"}
@@ -176,7 +177,7 @@ et{
         enm{"keskinglise"}
         eo{"esperanto"}
         es{"hispaania"}
-        es_ES{"hispaania (Ibeeria)"}
+        es_ES{"hispaania (Euroopa)"}
         et{"eesti"}
         eu{"baski"}
         ewo{"evondo"}
@@ -434,7 +435,7 @@ et{
         pro{"vanaprovansi"}
         ps{"puštu"}
         pt{"portugali"}
-        pt_PT{"portugali (Ibeeria)"}
+        pt_PT{"portugali (Euroopa)"}
         qu{"ketšua"}
         raj{"radžastani"}
         rap{"rapanui"}
@@ -587,6 +588,7 @@ et{
         zap{"sapoteegi"}
         zbl{"blissümbolid"}
         zen{"zenaga"}
+        zgh{"tamasikti (Maroko)"}
         zh{"hiina"}
         zh_Hans{"hiina keel - lihtsustatud"}
         zh_Hant{"hiina keel - traditsiooniline"}
@@ -598,6 +600,7 @@ et{
     }
     LanguagesShort{
         az{"aseri"}
+        en_US{"inglise (USA)"}
     }
     Scripts{
         Arab{"araabia"}
@@ -727,6 +730,42 @@ et{
             persian{"Pärsia kalender"}
             roc{"Hiina Vabariigi kalender"}
         }
+        colAlternate{
+            non-ignorable{"Sümbolite sortimine"}
+            shifted{"Sordi sümboleid eirates"}
+        }
+        colBackwards{
+            no{"Tavajärjestuses rõhumärkide alusel"}
+            yes{"Vastupidine sortimine rõhumärkide alusel"}
+        }
+        colCaseFirst{
+            lower{"Järjestus alates väiketähtedest"}
+            no{"Tõstutundlikkuse alusel sortimine"}
+            upper{"Järjestus alates suurtähtedest"}
+        }
+        colCaseLevel{
+            no{"Tõstutundlikkuseta sortimine"}
+            yes{"Tõstutundlikkuse alusel sortimine"}
+        }
+        colHiraganaQuaternary{
+            no{"Kana-kirjasüsteemi eraldi sortimine"}
+            yes{"Kana-kirjasüsteemi sortimine eraldi"}
+        }
+        colNormalization{
+            no{"Normeerimata sortimine"}
+            yes{"Normeeritud Unicode'i alusel sortimine"}
+        }
+        colNumeric{
+            no{"Numbrite eraldi sortimine"}
+            yes{"Numbrite alusel sortimine"}
+        }
+        colStrength{
+            identical{"Sordi kõik"}
+            primary{"Ainult põhitähestiku alusel sortimine"}
+            quaternary{"Rõhumärkide/algustähe/laiuse/kana-süsteemi alusel sortimine"}
+            secondary{"Rõhumärkide sortimine"}
+            tertiary{"Rõhumärkide/algustähe/laiuse alusel sortimine"}
+        }
         collation{
             big5han{"hiina traditsiooniline - big5"}
             dictionary{"Sõnastiku sortimisjärjestus"}
@@ -738,6 +777,7 @@ et{
             reformed{"Reformitud sortimisjärjestus"}
             search{"Üldeesmärgiline otsing"}
             searchjl{"Otsing hanguli alguskonsonandi alusel"}
+            standard{"Standardne sortimisjärjestus"}
             stroke{"elementide kirjutamise järjekorras"}
             traditional{"traditsiooniline"}
             unihan{"Radikaal-kriipsude sortimisjärjestus"}
@@ -820,7 +860,7 @@ et{
         VALENCIA{"valentsia"}
         WADEGILE{"Wade-Giles"}
     }
-    Version{"2.0.78.32"}
+    Version{"2.0.92.87"}
     codePatterns{
         language{"Keel: {0}"}
         script{"Skript: {0}"}
@@ -829,6 +869,6 @@ et{
     localeDisplayPattern{
         keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{","}
+        separator{"{0}, {1}"}
     }
 }

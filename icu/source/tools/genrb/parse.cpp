@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *
-*   Copyright (C) 1998-2012, International Business Machines
+*   Copyright (C) 1998-2013, International Business Machines
 *   Corporation and others.  All Rights Reserved.
 *
 *******************************************************************************
@@ -937,7 +937,6 @@ addCollation(ParseState* state, struct SResource  *result, uint32_t startline, U
                     data = (uint8_t *)uprv_malloc(len);
                     intStatus = U_ZERO_ERROR;
                     len = ucol_cloneBinary(coll, data, len, &intStatus);
-                    /*data = ucol_cloneRuleData(coll, &len, &intStatus);*/
 
                     /* tailoring rules version */
                     /* This is wrong! */
@@ -1790,7 +1789,6 @@ U_STRING_DECL(k_type_alias,     "alias",     5);
 U_STRING_DECL(k_type_intvector, "intvector", 9);
 U_STRING_DECL(k_type_import,    "import",    6);
 U_STRING_DECL(k_type_include,   "include",   7);
-U_STRING_DECL(k_type_reserved,  "reserved",  8);
 
 /* Various non-standard processing plugins that create one or more special resources. */
 U_STRING_DECL(k_type_plugin_uca_rules,      "process(uca_rules)",        18);
@@ -1854,7 +1852,6 @@ void initParser(UBool omitCollationRules)
     U_STRING_INIT(k_type_alias,     "alias",     5);
     U_STRING_INIT(k_type_intvector, "intvector", 9);
     U_STRING_INIT(k_type_import,    "import",    6);
-    U_STRING_INIT(k_type_reserved,  "reserved",  8);
     U_STRING_INIT(k_type_include,   "include",   7);
 
     U_STRING_INIT(k_type_plugin_uca_rules,      "process(uca_rules)",        18);

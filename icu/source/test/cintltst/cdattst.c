@@ -1,6 +1,6 @@
 /********************************************************************
  * COPYRIGHT: 
- * Copyright (c) 1997-2012, International Business Machines Corporation and
+ * Copyright (c) 1997-2013, International Business Machines Corporation and
  * others. All Rights Reserved.
  ********************************************************************/
 /********************************************************************************
@@ -36,6 +36,7 @@ static void TestExtremeDates(void);
 static void TestAllLocales(void);
 static void TestRelativeCrash(void);
 static void TestContext(void);
+static void TestCalendarDateParse(void);
 
 #define LEN(a) (sizeof(a)/sizeof(a[0]))
 
@@ -53,6 +54,7 @@ void addDateForTest(TestNode** root)
     TESTCASE(TestAllLocales);
     TESTCASE(TestRelativeCrash);
     TESTCASE(TestContext);
+    TESTCASE(TestCalendarDateParse);
 }
 /* Testing the DateFormat API */
 static void TestDateFormat()
@@ -590,7 +592,7 @@ static void TestSymbols()
         udat_countSymbols(def, UDAT_SHORT_MONTHS)!=12 || udat_countSymbols(def, UDAT_WEEKDAYS)!=8 ||
         udat_countSymbols(def, UDAT_SHORT_WEEKDAYS)!=8 || udat_countSymbols(def, UDAT_AM_PMS)!=2 ||
         udat_countSymbols(def, UDAT_QUARTERS) != 4 || udat_countSymbols(def, UDAT_SHORT_QUARTERS) != 4 ||
-        udat_countSymbols(def, UDAT_LOCALIZED_CHARS)!=1)
+        udat_countSymbols(def, UDAT_LOCALIZED_CHARS)!=1 || udat_countSymbols(def, UDAT_SHORTER_WEEKDAYS)!=8)
     {
         log_err("FAIL: error in udat_countSymbols\n");
     }
@@ -632,6 +634,7 @@ static void TestSymbols()
     VerifygetSymbols(fr, UDAT_WEEKDAYS, 1, "dimanche");
     VerifygetSymbols(def, UDAT_WEEKDAYS, 1, "Sunday");
     VerifygetSymbols(fr, UDAT_SHORT_WEEKDAYS, 7, "sam.");
+    VerifygetSymbols(fr, UDAT_SHORTER_WEEKDAYS, 7, "sa");
     VerifygetSymbols(def, UDAT_SHORT_WEEKDAYS, 7, "Sat");
     VerifygetSymbols(def, UDAT_MONTHS, 11, "December");
     VerifygetSymbols(def, UDAT_MONTHS, 0, "January");
@@ -644,7 +647,7 @@ static void TestSymbols()
     VerifygetSymbols(def, UDAT_QUARTERS, 3, "4th quarter");
     VerifygetSymbols(fr, UDAT_SHORT_QUARTERS, 1, "T2");
     VerifygetSymbols(def, UDAT_SHORT_QUARTERS, 2, "Q3");
-    VerifygetSymbols(def,UDAT_LOCALIZED_CHARS, 0, "GyMdkHmsSEDFwWahKzYeugAZvcLQqVU");
+    VerifygetSymbols(def,UDAT_LOCALIZED_CHARS, 0, "GyMdkHmsSEDFwWahKzYeugAZvcLQqVUOXx");
 
 
     if(result != NULL) {
@@ -880,7 +883,106 @@ static void TestDateFormatCalendar() {
     ctest_resetTimeZone();
 }
 
+
+
+/**
+ * Test parsing two digit year against "YY" vs. "YYYY" patterns
+ */
+static void TestCalendarDateParse() {
+
+    int32_t result;
+    UErrorCode ec = U_ZERO_ERROR;
+    UDateFormat* simpleDateFormat = 0;
+    int32_t parsePos = 0;
+    int32_t twoDigitCenturyStart = 75;
+    int32_t currentTwoDigitYear = 0;
+    int32_t startCentury = 0;
+    UCalendar* tempCal = 0;
+    UCalendar* calendar = 0;
+
+    U_STRING_DECL(pattern, "yyyy", 4);
+    U_STRING_DECL(pattern2, "yy", 2);
+    U_STRING_DECL(text, "75", 2);
+
+    U_STRING_INIT(pattern, "yyyy", 4);
+    U_STRING_INIT(pattern2, "yy", 2);
+    U_STRING_INIT(text, "75", 2);
+
+    simpleDateFormat = udat_open(UDAT_FULL, UDAT_FULL, "en-GB", 0, 0, 0, 0, &ec);
+    if (U_FAILURE(ec)) {
+        log_data_err("udat_open(UDAT_FULL, UDAT_FULL, \"en-GB\", 0, 0, 0, 0, &ec) failed: %s - (Are you missing data?)\n", u_errorName(ec));
+        return;
+    }
+    udat_applyPattern(simpleDateFormat, 0, pattern, u_strlen(pattern));
+    udat_setLenient(simpleDateFormat, 0);
+
+    currentTwoDigitYear = getCurrentYear() % 100;
+    startCentury = getCurrentYear() - currentTwoDigitYear;
+    if (twoDigitCenturyStart > currentTwoDigitYear) {
+      startCentury -= 100;
+    }
+    tempCal = ucal_open(NULL, -1, NULL, UCAL_GREGORIAN, &ec);
+    ucal_setMillis(tempCal, 0, &ec);
+    ucal_setDateTime(tempCal, startCentury + twoDigitCenturyStart, UCAL_JANUARY, 1, 0, 0, 0, &ec);
+    udat_set2DigitYearStart(simpleDateFormat, ucal_getMillis(tempCal, &ec), &ec);
+
+    calendar = ucal_open(NULL, -1, NULL, UCAL_GREGORIAN, &ec);
+    ucal_setMillis(calendar, 0, &ec);
+    ucal_setDateTime(calendar, twoDigitCenturyStart, UCAL_JANUARY, 1, 0, 0, 0, &ec);
+
+    udat_parseCalendar(simpleDateFormat, calendar, text, u_strlen(text), &parsePos, &ec);
+
+    /* Check result */
+    result = ucal_get(calendar, UCAL_YEAR, &ec);
+    if (U_FAILURE(ec)) {
+        log_err("FAIL: ucal_get(UCAL_YEAR) failed with %s\n", u_errorName(ec));
+        goto FAIL;
+    }
+
+    if (result != 75) {
+        log_err("FAIL: parsed incorrect year: %d\n", result);
+        goto FAIL;
+    }
+
+    parsePos = 0;
+    udat_applyPattern(simpleDateFormat, 0, pattern2, u_strlen(pattern2));
+    udat_parseCalendar(simpleDateFormat, calendar, text, u_strlen(text), &parsePos, &ec);
+
+    /* Check result */
+    result = ucal_get(calendar, UCAL_YEAR, &ec);
+    if (U_FAILURE(ec)) {
+        log_err("FAIL: ucal_get(UCAL_YEAR) failed with %s\n", u_errorName(ec));
+        goto FAIL;
+    }
+
+    if (result != 1975) {
+        log_err("FAIL: parsed incorrect year: %d\n", result);
+        goto FAIL;
+    }
+
+ FAIL:
+    udat_close(simpleDateFormat);
+    udat_close(tempCal);
+    udat_close(calendar);
+}
+
+
 /*INTERNAL FUNCTIONS USED*/
+static int getCurrentYear() {
+    static int currentYear = 0;
+    if (currentYear == 0) {
+        UErrorCode status = U_ZERO_ERROR;
+        UCalendar *cal = ucal_open(NULL, -1, NULL, UCAL_GREGORIAN, &status);
+        if (!U_FAILURE(status)) {
+            /* Get the current year from the default UCalendar */
+            currentYear = ucal_get(cal, UCAL_YEAR, &status);
+            ucal_close(cal);
+        }
+    }
+
+    return currentYear;
+}
+
 /* N.B.:  use idx instead of index to avoid 'shadow' warnings in strict mode. */
 static void VerifygetSymbols(UDateFormat* datfor, UDateFormatSymbolType type, int32_t idx, const char* expected)
 {

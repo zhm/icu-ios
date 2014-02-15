@@ -1,6 +1,6 @@
 /********************************************************************
  * COPYRIGHT: 
- * Copyright (c) 2008-2012, International Business Machines Corporation
+ * Copyright (c) 2008-2013, International Business Machines Corporation
  * and others. All Rights Reserved.
  ********************************************************************/
 
@@ -49,6 +49,7 @@ public:
      * As of CLDR shiped in ICU4.8, Greek is one such language.
      */
     void testGreekWithSanitization();
+
 };
 
 #endif /* #if !UCONFIG_NO_FORMATTING */

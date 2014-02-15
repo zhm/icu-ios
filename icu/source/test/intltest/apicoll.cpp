@@ -1,6 +1,6 @@
 /********************************************************************
  * COPYRIGHT:
- * Copyright (c) 1997-2012, International Business Machines Corporation and
+ * Copyright (c) 1997-2013, International Business Machines Corporation and
  * others. All Rights Reserved.
  ********************************************************************/
 //===============================================================================
@@ -1772,6 +1772,9 @@ void CollationAPITest::TestBounds(void) {
     int32_t i = 0, j = 0, k = 0, buffSize = 0, skSize = 0, lowerSize = 0, upperSize = 0;
     int32_t arraySize = sizeof(tests)/sizeof(tests[0]);
 
+    (void)lowerSize;  // Suppress unused variable warnings.
+    (void)upperSize;
+
     for(i = 0; i<arraySize; i++) {
         buffSize = u_unescape(tests[i].original, buffer, 512);
         skSize = coll->getSortKey(buffer, buffSize, tests[i].key, 512);
@@ -2053,7 +2056,7 @@ Locale TestCollator::getLocale(ULocDataLocaleType type, UErrorCode& status) cons
 {
     // api not used, this is to make the compiler happy
     if (U_FAILURE(status)) {
-        type = ULOC_DATA_LOCALE_TYPE_LIMIT;
+        (void)type;
     }
     return NULL;
 }
@@ -2066,7 +2069,7 @@ Collator::ECollationStrength TestCollator::getStrength() const
 void TestCollator::setStrength(Collator::ECollationStrength newStrength)
 {
     // api not used, this is to make the compiler happy
-    newStrength = TERTIARY;
+    (void)newStrength;
 }
 
 UClassID TestCollator::getDynamicClassID(void) const
@@ -2080,14 +2083,9 @@ void TestCollator::getVersion(UVersionInfo info) const
     memset(info, 0, U_MAX_VERSION_LENGTH);
 }
 
-void TestCollator::setAttribute(UColAttribute attr, UColAttributeValue value, 
-                                UErrorCode &status)
+void TestCollator::setAttribute(UColAttribute /*attr*/, UColAttributeValue /*value*/, 
+                                UErrorCode & /*status*/)
 {
-    // api not used, this is to make the compiler happy
-    if (U_FAILURE(status)) {
-        attr = UCOL_ATTRIBUTE_COUNT;
-        value = UCOL_OFF;
-    }
 }
 
 UColAttributeValue TestCollator::getAttribute(UColAttribute attr, 
@@ -2272,6 +2270,29 @@ void CollationAPITest::TestClone() {
     delete c2;
 }
 
+void CollationAPITest::TestIterNumeric() {
+    // Regression test for ticket #9915.
+    // The collation code sometimes masked the continuation marker away
+    // but later tested the result for isContinuation().
+    // This test case failed because the third bytes of the computed numeric-collation primaries
+    // were permutated with the script reordering table.
+    // It should have been possible to reproduce this with the root collator
+    // and characters with appropriate 3-byte primary weights.
+    // The effectiveness of this test depends completely on the collation elements
+    // and on the implementation code.
+    IcuTestErrorCode errorCode(*this, "TestIterNumeric");
+    RuleBasedCollator coll(UnicodeString("[reorder Hang Hani]"), errorCode);
+    if(errorCode.logDataIfFailureAndReset("RuleBasedCollator constructor")) {
+        return;
+    }
+    coll.setAttribute(UCOL_NUMERIC_COLLATION, UCOL_ON, errorCode);
+    UCharIterator iter40, iter72;
+    uiter_setUTF8(&iter40, "\x34\x30", 2);
+    uiter_setUTF8(&iter72, "\x37\x32", 2);
+    UCollationResult result = coll.compare(iter40, iter72, errorCode);
+    assertEquals("40<72", (int32_t)UCOL_LESS, (int32_t)result);
+}
+
  void CollationAPITest::dump(UnicodeString msg, RuleBasedCollator* c, UErrorCode& status) {
     const char* bigone = "One";
     const char* littleone = "one";
@@ -2309,6 +2330,7 @@ void CollationAPITest::runIndexedTest( int32_t index, UBool exec, const char* &n
     TESTCASE_AUTO(TestSubclass);
     TESTCASE_AUTO(TestNULLCharTailoring);
     TESTCASE_AUTO(TestClone);
+    TESTCASE_AUTO(TestIterNumeric);
     TESTCASE_AUTO_END;
 }
 

@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************
 // *
-// * Copyright (C) 2012 International Business Machines
-// * Corporation and others.  All Rights Reserved.
+// * Copyright (C) 2013 International Business Machines
+// * Corporation and others. All Rights Reserved.
 // * Tool: org.unicode.cldr.icu.NewLdml2IcuConverter
 // * Source File: <path>/common/main/en.xml
 // *
 // ***************************************************************************
 /**
- *  ICU <specials> source: <path>/xml/main/en.xml
+ * ICU <specials> source: <path>/common/main/en.xml
  */
 en{
     Keys{
@@ -19,6 +19,7 @@ en{
         colHiraganaQuaternary{"Kana Sorting"}
         colNormalization{"Normalized Sorting"}
         colNumeric{"Numeric Sorting"}
+        colReorder{"Script/Block Reordering"}
         colStrength{"Sorting Strength"}
         collation{"Sort Order"}
         currency{"Currency"}
@@ -176,12 +177,13 @@ en{
         en_AU{"Australian English"}
         en_CA{"Canadian English"}
         en_GB{"British English"}
-        en_US{"U.S. English"}
+        en_US{"American English"}
         enm{"Middle English"}
         eo{"Esperanto"}
         es{"Spanish"}
         es_419{"Latin American Spanish"}
         es_ES{"European Spanish"}
+        es_MX{"Mexican Spanish"}
         et{"Estonian"}
         eu{"Basque"}
         ewo{"Ewondo"}
@@ -315,7 +317,7 @@ en{
         kut{"Kutenai"}
         kv{"Komi"}
         kw{"Cornish"}
-        ky{"Kirghiz"}
+        ky{"Kyrgyz"}
         la{"Latin"}
         lad{"Ladino"}
         lag{"Langi"}
@@ -325,6 +327,7 @@ en{
         lez{"Lezghian"}
         lg{"Ganda"}
         li{"Limburgish"}
+        lkt{"Lakota"}
         ln{"Lingala"}
         lo{"Lao"}
         lol{"Mongo"}
@@ -561,7 +564,7 @@ en{
         tyv{"Tuvinian"}
         tzm{"Central Atlas Tamazight"}
         udm{"Udmurt"}
-        ug{"Uighur"}
+        ug{"Uyghur"}
         uga{"Ugaritic"}
         uk{"Ukrainian"}
         umb{"Umbundu"}
@@ -597,6 +600,7 @@ en{
         zap{"Zapotec"}
         zbl{"Blissymbols"}
         zen{"Zenaga"}
+        zgh{"Standard Moroccan Tamazight"}
         zh{"Chinese"}
         zh_Hans{"Simplified Chinese"}
         zh_Hant{"Traditional Chinese"}
@@ -608,6 +612,8 @@ en{
     }
     LanguagesShort{
         az{"Azeri"}
+        en_GB{"U.K. English"}
+        en_US{"U.S. English"}
     }
     Scripts{
         Afak{"Afaka"}
@@ -785,15 +791,56 @@ en{
             hebrew{"Hebrew Calendar"}
             indian{"Indian National Calendar"}
             islamic{"Islamic Calendar"}
-            islamic-civil{"Islamic-Civil Calendar"}
+            islamic-civil{"Islamic Calendar (tabular, civil epoch)"}
+            islamic-rgsa{"Islamic Calendar (Saudi Arabia, sighting)"}
+            islamic-tbla{"Islamic Calendar (tabular, astronomical epoch)"}
+            islamic-umalqura{"Islamic Calendar (Umm al-Qura)"}
+            iso8601{"ISO-8601 Calendar"}
             japanese{"Japanese Calendar"}
             persian{"Persian Calendar"}
             roc{"Minguo Calendar"}
+        }
+        colAlternate{
+            non-ignorable{"Sort Symbols"}
+            shifted{"Sort Ignoring Symbols"}
+        }
+        colBackwards{
+            no{"Sort Accents Normally"}
+            yes{"Sort Accents Reversed"}
+        }
+        colCaseFirst{
+            lower{"Sort Lowercase First"}
+            no{"Sort Normal Case Order"}
+            upper{"Sort Uppercase First"}
+        }
+        colCaseLevel{
+            no{"Sort Case Insensitive"}
+            yes{"Sort Case Sensitive"}
+        }
+        colHiraganaQuaternary{
+            no{"Sort Kana Separately"}
+            yes{"Sort Kana Differently"}
+        }
+        colNormalization{
+            no{"Sort Without Normalization"}
+            yes{"Sort Unicode Normalized"}
+        }
+        colNumeric{
+            no{"Sort Digits Individually"}
+            yes{"Sort Digits Numerically"}
+        }
+        colStrength{
+            identical{"Sort All"}
+            primary{"Sort Base Letters Only"}
+            quaternary{"Sort Accents/Case/Width/Kana"}
+            secondary{"Sort Accents"}
+            tertiary{"Sort Accents/Case/Width"}
         }
         collation{
             big5han{"Traditional Chinese Sort Order - Big5"}
             dictionary{"Dictionary Sort Order"}
             ducet{"Default Unicode Sort Order"}
+            eor{"European Ordering Rules"}
             gb2312han{"Simplified Chinese Sort Order - GB2312"}
             phonebook{"Phonebook Sort Order"}
             phonetic{"Phonetic Sort Order"}
@@ -801,6 +848,7 @@ en{
             reformed{"Reformed Sort Order"}
             search{"General-Purpose Search"}
             searchjl{"Search By Hangul Initial Consonant"}
+            standard{"Standard Sort Order"}
             stroke{"Stroke Sort Order"}
             traditional{"Traditional Sort Order"}
             unihan{"Radical-Stroke Sort Order"}
@@ -813,6 +861,8 @@ en{
             armnlow{"Armenian Lowercase Numerals"}
             bali{"Balinese Digits"}
             beng{"Bengali Digits"}
+            brah{"Brahmi Digits"}
+            cakm{"Chakma Digits"}
             cham{"Cham Digits"}
             deva{"Devanagari Digits"}
             ethi{"Ethiopic Numerals"}
@@ -850,10 +900,14 @@ en{
             nkoo{"N'Ko Digits"}
             olck{"Ol Chiki Digits"}
             orya{"Oriya Digits"}
+            osma{"Osmanya Digits"}
             roman{"Roman Numerals"}
             romanlow{"Roman Lowercase Numerals"}
             saur{"Saurashtra Digits"}
+            shrd{"Sharada Digits"}
+            sora{"Sora Sompeng Digits"}
             sund{"Sundanese Digits"}
+            takr{"Takri Digits"}
             talu{"New Tai Lue Digits"}
             taml{"Traditional Tamil Numerals"}
             tamldec{"Tamil Digits"}
@@ -862,6 +916,9 @@ en{
             tibt{"Tibetan Digits"}
             traditional{"Traditional Numerals"}
             vaii{"Vai Digits"}
+        }
+        va{
+            posix{"POSIX Compliant Locale"}
         }
     }
     Variants{
@@ -912,14 +969,15 @@ en{
         VALENCIA{"Valencian"}
         WADEGILE{"Wade-Giles Romanization"}
     }
-    Version{"2.0.78.36"}
+    Version{"2.0.92.87"}
     codePatterns{
         language{"Language: {0}"}
         script{"Script: {0}"}
         territory{"Region: {0}"}
     }
     localeDisplayPattern{
+        keyTypePattern{"{0}: {1}"}
         pattern{"{0} ({1})"}
-        separator{", "}
+        separator{"{0}, {1}"}
     }
 }
