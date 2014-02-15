@@ -1,5 +1,5 @@
 build-armv7
 build-armv7s
-build-armv64
+build-arm64
 build-i386
 build-universal
