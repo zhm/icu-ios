@@ -1,6 +1,6 @@
 ## ICU for iOS - armv7 / armv7s / arm64 / i386
 
-This is a static universal build of ICU 54.1 for armv7, armv7s, arm64, and i386 suitable for using in iOS apps. The `icu` directory is taken from [here](http://download.icu-project.org/files/icu4c/52.1/icu4c-52_1-src.tgz).
+This is a static universal build of ICU 54.1.1 for armv7, armv7s, arm64, and i386 suitable for using in iOS apps. The `icu` directory is taken from [here](http://download.icu-project.org/files/icu4j/54.1.1/icu4j-54_1_1.tgz).
 
 ## Setting it up
 
