@@ -1,4 +1,4 @@
-DEVELOPER=/Applications/Xcode.app/Contents/Developer
+DEVELOPER="$(xcode-select --print-path)"
 SDKROOT="$(xcodebuild -version -sdk iphoneos | grep -E '^Path' | sed 's/Path: //')"
 ARCH="arm64"
 
