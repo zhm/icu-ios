@@ -13,9 +13,6 @@ I recommend putting this repo under a `Vendor` directory inside your project fol
     $ cd YourAppName/Vendor/icu-ios
     $ ./build.sh
 
-Important : It seems it does not compile with the Command Line Tools of Xcode 6.1.
--> Use the Xcode 5.1.1 command lines tools. (Xcode preferences, Locations, Command Line Tools)
-
 ## Adding it to your project
 
 Add all of the `.a` files from the `build-universal` directory to your project from the `Link Binary With Libraries` section under
