@@ -16,8 +16,6 @@
 ******************************************************************************
 */
 
-#define U_HAVE_GCC_ATOMICS 0
-
 #ifndef _PLATFORM_H
 #define _PLATFORM_H
 
