@@ -3,3 +3,4 @@ build-armv7s
 build-arm64
 build-i386
 build-universal
+build-x86_64
