@@ -4,3 +4,4 @@ build-arm64
 build-i386
 build-universal
 build-x86_64
+build-host

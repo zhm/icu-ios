@@ -1,10 +1,10 @@
 
 ICU_ROOT=$(pwd)
 
-./configure_i386.sh
-mkdir -p build-i386 && cd build-i386 && gnumake
+# ./configure_i386.sh
+# mkdir -p build-i386 && cd build-i386 && gnumake
 
-cd $ICU_ROOT
+# cd $ICU_ROOT
 
 ./configure_x86_64.sh
 mkdir -p build-x86_64 && cd build-x86_64 && gnumake

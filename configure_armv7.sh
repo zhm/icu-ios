@@ -15,4 +15,4 @@ mkdir -p build-$ARCH && cd build-$ARCH
 
 [ -e Makefile ] && make distclean
 
-sh $ICU_PATH/source/configure --host=arm-apple-darwin --enable-static --disable-shared -with-cross-build=$ICU_PATH/../build-i386
+sh $ICU_PATH/source/configure --host=arm-apple-darwin --enable-static --disable-shared -with-cross-build=$ICU_PATH/../build-host
